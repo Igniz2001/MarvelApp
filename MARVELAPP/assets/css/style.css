@@ -1,6 +1,7 @@
 .character-container {
   display: flex;
   flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .carta {
@@ -38,20 +39,15 @@
   background-color: #fefefe;
   margin: 5% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 5px solid #888;
   width: 80%;
 }
 
 .close-button {
-  background-color: #ccc;
-  color: #000;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-}
-
-.close-button:hover {
-  background-color: #aaa;
 }
 
 /* Agrega estilos para la imagen en el detalle del personaje */
@@ -70,3 +66,23 @@
     display: table;
     margin: 0 auto;
   }
+
+  table {
+    border-spacing: 5px; /* Espaciado entre celdas */
+  }
+
+  td {
+    padding: 10px; /* Relleno interno de las celdas */
+  }
+  
+/* Estilo para el GIF cuando no está en estado hover */
+.gif-hover {
+    transition: transform 0.3s ease-in-out; /* Agrega una transición suave */
+  }
+  
+  /* Estilo para el GIF cuando está en estado hover */
+  .gif-hover:hover {
+    transform: scale(1.2); /* Cambia el tamaño del GIF al hacer hover */
+  }
+
+  

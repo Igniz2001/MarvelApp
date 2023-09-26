@@ -14,15 +14,30 @@
     <div v-if="selctedcharacter" class="modal">
       <div class="modal-content">
         <center>
-        <h2>{{ selctedcharacter.name }}</h2>
-        <div class="selctedcharacter-image-container">
-          <img :src="selctedcharacter.thumbnail.path + '.' + selctedcharacter.thumbnail.extension" alt="" class="imagen" />
-        </div>
-        <p>{{ selctedcharacter.description }}</p>
-        <h3>Cantidad de cómics: {{ selctedcharacter.comics.available }}</h3>
-        <h3>Cantidad de series: {{ selctedcharacter.series.available }}</h3>
-        <h3>Cantidad de stories: {{ selctedcharacter.stories.available }}</h3>
-        <h3>Cantidad de events: {{ selctedcharacter.events.available }}</h3>
+          <h2>{{ selctedcharacter.name }}</h2>
+          <div class="selctedcharacter-image-container">
+            <img :src="selctedcharacter.thumbnail.path + '.' + selctedcharacter.thumbnail.extension" alt=""
+              class="imagen" />
+          </div>
+          <p>{{ selctedcharacter.description }}</p>
+          <table>
+            <tr>
+              <td>
+                <h3>Cantidad de cómics: {{ selctedcharacter.comics.available }}</h3>
+              </td>
+              <td>
+                <h3>Cantidad de series: {{ selctedcharacter.series.available }}</h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Cantidad de stories: {{ selctedcharacter.stories.available }}</h3>
+              </td>
+              <td>
+                <h3>Cantidad de events: {{ selctedcharacter.events.available }}</h3>
+              </td>
+            </tr>
+          </table>
         </center>
         <h3 align="center">3 primeras series en la que aparece:</h3>
         <ul>
@@ -35,7 +50,11 @@
         </ul>
         <br>
         <br>
-        <center><button class="close-button" @click="closeModal()">Cerrar</button></center>
+        <center>
+          <button class="close-button" @click="closeModal">
+            <img src="https://media.tenor.com/8D4CNzYT7i0AAAAi/snap-the-snap.gif" alt="Snap GIF" class="gif-hover">
+          </button>
+        </center>
       </div>
     </div>
   </div>
@@ -78,6 +97,21 @@ const showCharacterDetails = (character) => {
 const closeModal = () => {
   selctedcharacter.value = null;
 };
+
+let gifElement = null;
+
+  const playGif = () => {
+    if (gifElement) {
+      gifElement.play();
+    }
+  };
+
+  const pauseGif = () => {
+    if (gifElement) {
+      gifElement.pause();
+    }
+  };
+
 loadCharacters();
 </script>
   
