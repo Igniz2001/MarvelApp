@@ -54,3 +54,19 @@
   background-color: #aaa;
 }
 
+/* Agrega estilos para la imagen en el detalle del personaje */
+.selctedcharacter-image-container {
+    width: 50%;
+    height: auto;
+    text-align: center;
+  }
+  
+  .selctedcharacter-image-container img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  ul {
+    display: table;
+    margin: 0 auto;
+  }
