@@ -19,27 +19,32 @@
             <img :src="selctedcharacter.thumbnail.path + '.' + selctedcharacter.thumbnail.extension" alt=""
               class="imagen" />
           </div>
-          <p>{{ selctedcharacter.description }}</p>
+          <div class="description-validator" v-if="!selctedcharacter.description">
+            <h3>Description not available yet</h3>
+          </div>
+          <div v-else>
+            <p>{{ selctedcharacter.description }}</p>
+          </div>
           <table>
             <tr>
               <td>
-                <h3>Cantidad de cómics: {{ selctedcharacter.comics.available }}</h3>
+                <h3>number of comics: {{ selctedcharacter.comics.available }}</h3>
               </td>
               <td>
-                <h3>Cantidad de series: {{ selctedcharacter.series.available }}</h3>
+                <h3>number of series: {{ selctedcharacter.series.available }}</h3>
               </td>
             </tr>
             <tr>
               <td>
-                <h3>Cantidad de stories: {{ selctedcharacter.stories.available }}</h3>
+                <h3>number of stories: {{ selctedcharacter.stories.available }}</h3>
               </td>
               <td>
-                <h3>Cantidad de events: {{ selctedcharacter.events.available }}</h3>
+                <h3>number of events: {{ selctedcharacter.events.available }}</h3>
               </td>
             </tr>
           </table>
         </center>
-        <h2 align="center">3 primeras series en la que aparece:</h2>
+        <h2 align="center">First 3 series where he/she appears:</h2>
         <ul>
           <template v-for="(seriesItem, index) in selctedcharacter.series.items" :key="seriesItem.resourceURI">
             <!-- Mostrar solo las primeras 3 series -->
