@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
+
+body{
+  background-image: url('comic2.jpg');
+}
+
 .character-container {
   display: flex;
   flex-wrap: wrap;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Skranji', cursive;
+  padding-top: 80px;
 }
 
 .carta {
   width: 23%;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 5px solid black;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .linea-roja {
@@ -18,9 +26,10 @@
   padding-bottom: 5px;
 }
 
+
 .imagen {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -36,18 +45,40 @@
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #f0f0f0;
+  background-image: url('comic1.png');
+  background-repeat:no-repeat ;
+  background-size: cover; 
   margin: 5% auto;
   padding: 20px;
-  border: 5px solid #888;
+  border: 5px solid #000000;
   width: 80%;
 }
 
+.modal-content h1{
+  font-size: 50px;
+  font-style: italic;
+  color: antiquewhite;
+  background-color: #000000;
+}
+
+.modal-content h2{
+  font-style: italic;
+  color: antiquewhite;
+  background-color: #000000;
+}
+
+.modal-content p{
+  font-size: 25px;
+  font-style: italic;
+  color: antiquewhite;
+  background-color: #000000;
+}
+
 .close-button {
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
+  padding: 5px 5px;
   cursor: pointer;
+  border: 5px solid black;
 }
 
 /* Agrega estilos para la imagen en el detalle del personaje */
@@ -60,19 +91,26 @@
   .selctedcharacter-image-container img {
     max-width: 50%;
     height: auto;
+    border: 5px solid white;
   }
   
   ul {
     display: table;
     margin: 0 auto;
+    font-size: 25px;
+    background-color: white;
+    border: 5px solid black;
   }
 
   table {
-    border-spacing: 5px; /* Espaciado entre celdas */
+    border-spacing: 10px; /* Espaciado entre celdas */
+    background-color: #f0f0f0;
+    border: 5px solid black;
   }
 
   td {
-    padding: 10px; /* Relleno interno de las celdas */
+    padding: 15px; /* Relleno interno de las celdas */
+    font-size: 20px;
   }
   
 /* Estilo para el GIF cuando no está en estado hover */
@@ -85,4 +123,19 @@
     transform: scale(1.2); /* Cambia el tamaño del GIF al hacer hover */
   }
 
+  .top-bar {
+    background-color: #151515; 
+    height: 85px; 
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+  }
+  .imagen-bar{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
   

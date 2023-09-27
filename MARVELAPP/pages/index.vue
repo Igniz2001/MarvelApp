@@ -2,7 +2,7 @@
   <div class="character-container">
     <div v-for="character in characters" :key="character.id" class="carta" @click="showCharacterDetails(character)">
       <div class="linea-roja">
-        <h2 class="nombres">{{ character.name }}</h2>
+        <h2 align="center" class="nombres">{{ character.name }}</h2>
       </div>
       <div class="contenido">
         <div class="character-image-container">
@@ -14,7 +14,7 @@
     <div v-if="selctedcharacter" class="modal">
       <div class="modal-content">
         <center>
-          <h2>{{ selctedcharacter.name }}</h2>
+          <h1>{{ selctedcharacter.name }}</h1>
           <div class="selctedcharacter-image-container">
             <img :src="selctedcharacter.thumbnail.path + '.' + selctedcharacter.thumbnail.extension" alt=""
               class="imagen" />
@@ -39,7 +39,7 @@
             </tr>
           </table>
         </center>
-        <h3 align="center">3 primeras series en la que aparece:</h3>
+        <h2 align="center">3 primeras series en la que aparece:</h2>
         <ul>
           <template v-for="(seriesItem, index) in selctedcharacter.series.items" :key="seriesItem.resourceURI">
             <!-- Mostrar solo las primeras 3 series -->
@@ -98,19 +98,6 @@ const closeModal = () => {
   selctedcharacter.value = null;
 };
 
-let gifElement = null;
-
-  const playGif = () => {
-    if (gifElement) {
-      gifElement.play();
-    }
-  };
-
-  const pauseGif = () => {
-    if (gifElement) {
-      gifElement.pause();
-    }
-  };
 
 loadCharacters();
 </script>
